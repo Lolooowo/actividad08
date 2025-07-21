@@ -1,5 +1,5 @@
 def factos(x):
-    if x==1
+    if x==1:
         return 1
     else:
         return x * factos(x-1)
@@ -19,11 +19,12 @@ def potencia(base, exponente):
     else:
         return base*potencia(base, exponente-1)
 def invertir(palabra):
+    nuevaPalabra = []
     if len(palabra)==1:
         return palabra[0]
     else:
-        nuevaPalabra = []
-        return nuevaPalabra.append(invertir(palabra.pop()))
+        palabra.pop()
+        return nuevaPalabra.append(invertir(palabra))
 
 while True:
     print("1.Calcular el factorial de un numero.")
@@ -49,6 +50,7 @@ while True:
             letra = input("Ingrese la letra que desea saber cuantas veces se repite: ")
         case 5:
             palabraInvertir = input("Ingrese la palabra para invertirla: ")
+            palabraInvertir = palabraInvertir.split()
             print(invertir(palabraInvertir))
         case 6:
             base = int(input("Ingrese la base: "))
